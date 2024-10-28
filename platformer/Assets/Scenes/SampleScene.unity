@@ -542,6 +542,49 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8361119541766089514, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
   m_PrefabInstance: {fileID: 3188488155807327667}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &480690729 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 392399498106771258, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+  m_PrefabInstance: {fileID: 3188488155807327667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &480690734
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480690727}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb12caa5be8c47f4ab82b39547bcf7fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &480690735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480690727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f338c62dea960fb438632d5e6ae65191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 480690734}
+  Idle: Player_idle
+  Run: Player_run
+  Jump: Player_jump
+  Fall: Player_fall
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1659,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1476760736752757134, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4696813711825311876, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1656,6 +1703,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7926672044033858374, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      propertyPath: jumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926672044033858374, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 480690729}
+    - target: {fileID: 7926672044033858374, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      propertyPath: playerAnimation
+      value: 
+      objectReference: {fileID: 480690734}
     - target: {fileID: 8361119541766089514, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1663,7 +1722,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8361119541766089514, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 480690734}
+    - targetCorrespondingSourceObject: {fileID: 8361119541766089514, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 480690735}
   m_SourcePrefab: {fileID: 100100000, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
 --- !u!1001 &8602287672609381219
 PrefabInstance:
@@ -1781,6 +1846,14 @@ PrefabInstance:
     - target: {fileID: 2083311376489435740, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521891108686109294, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196569908497064787, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
