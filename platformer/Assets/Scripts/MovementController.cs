@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -10,6 +11,7 @@ public class MovementController : MonoBehaviour
     public int halfHeight = 10;
 
     public float jumpForce = 5.0f;
+    public float runSpeed = 5.0f;
     public bool grounded = false;
     public Rigidbody2D playerBody;
 
@@ -25,18 +27,18 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        float distance = 5 * Time.deltaTime;
-        
+        float x_dir = 0;
+
         // movement along the x axis
         if (Input.GetKey(KeyCode.D) && pos.x < halfWidth)
         {
-            pos.x += distance;
+            x_dir += 1;
         }
         if (Input.GetKey(KeyCode.A) && pos.x > -halfWidth)
         {
-            pos.x -= distance;
+            x_dir -= 1;
         }
-        
+
         // movement along the y axis 
         /*if (Input.GetKey(KeyCode.W) && pos.y < halfHeight)
         {
@@ -46,8 +48,8 @@ public class MovementController : MonoBehaviour
         {
             pos.y -= distance;
         }*/
-        
-        transform.position = pos;
+
+        playerBody.velocity = new Vector2(x_dir * runSpeed, playerBody.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
@@ -58,7 +60,6 @@ public class MovementController : MonoBehaviour
         foreach (KeyValuePair<string,int> tag_Count in pickedFruits){
             Debug.Log(tag_Count.Key + ":" + tag_Count.Value);
         }
-        
     }
 
 
