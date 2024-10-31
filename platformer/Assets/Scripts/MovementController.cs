@@ -18,6 +18,8 @@ public class MovementController : MonoBehaviour
     // Initialize the inventory dictionary
     public Dictionary<string, int> pickedFruits = new Dictionary<string, int>();
 
+    public Animator animator;
+
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -60,6 +62,9 @@ public class MovementController : MonoBehaviour
         foreach (KeyValuePair<string,int> tag_Count in pickedFruits){
             Debug.Log(tag_Count.Key + ":" + tag_Count.Value);
         }
+        animator.SetFloat("xSpeed", Mathf.Abs(playerBody.velocity.x));
+        animator.SetFloat("yVelocity", playerBody.velocity.y);
+        animator.SetBool("grounded", grounded);
     }
 
 
